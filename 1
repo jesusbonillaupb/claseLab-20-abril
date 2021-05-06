@@ -1,0 +1,46 @@
+def primos (num):
+    c=0
+    for i in range(2,num):
+        if num % i == 0:
+            return False
+    return True
+
+
+def sumaDigitos(num):
+    suma=0
+    while num!=0:
+        digito=num%10
+        suma=suma+digito
+        num=num//10
+    return suma
+
+def factorial(mayor):
+   f=1
+   if mayor!=0:
+       for i in range(1,mayor+1):
+           f=f*i
+   return f
+def Repeticion(num,Digito):
+    Repet=num.count(Digito)
+    return Repet
+mayor=0
+while True:
+    num = input("ingrese un numero primo ")
+    Digito = input("ingrese un numero que desee ver cuanto se repite ")
+    print("el numero ", Digito, "se repite",Repeticion(num, Digito),"vez/veces en el numero", num)
+    num=int(num)
+    print("la suma de sus digitos es=",sumaDigitos(num))
+    if num>mayor:
+        mayor=num
+    if num==1:
+        print(num,"no es un numero primo primo")
+        break
+
+    if primos(num)==True:
+        print(num,"es un numero primo")
+
+    else:
+        print(num,"no es un numero primo")
+        break
+print("el mayor numero ingresado fue=",mayor,"y su factorial es",factorial(mayor) )
+
